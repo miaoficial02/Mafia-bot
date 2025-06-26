@@ -14,7 +14,7 @@ const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
  
 // CAmbia porel Nombre de tu bot
-say('AlyaKujouBot', {
+say('Mafia-Bot', {
 font: 'chrome',
 align: 'center',
 gradient: ['red', 'magenta']})
