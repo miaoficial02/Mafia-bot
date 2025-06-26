@@ -1,4 +1,4 @@
-﻿<h1 align="center">💗 𝘼𝙇𝙔𝘼-𝙆𝙐𝙅𝙊𝙐-𝘽𝙊𝙏 💗</h1>  
+﻿<h1 align="center">🥷🏻 𝘔𝘈𝘍𝘐𝘈-𝘉𝘖𝘛 🥷🏻</h1>  
 <p align="center"><i>𝑺𝑼𝑷𝑬𝑹 𝑩𝑶𝑻 𝑺𝑰𝑴𝑷𝑳𝑬 𝑷𝑨𝑹𝑨 𝑻𝑰 🩷</i></p>
 
 <p align="center">
@@ -27,6 +27,6 @@
 
 
 ### **`🜸 Créditos el Mejor ❤️`**
-<a href="https://github.com/Elpapiema" style="display:inline-block; text-decoration: none;">
+<a href="https://github.com/miaoficial02" style="display:inline-block; text-decoration: none;">
     <img src="https://github.com/Elpapiema.png" width="130" height="130" alt="Alex-X" style="border-radius: 50%;"/>
 </a>
