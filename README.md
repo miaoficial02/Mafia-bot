@@ -21,12 +21,12 @@
 > 𝙲𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚞𝚗𝚘𝚜 𝚙𝚘𝚛 𝚞𝚗𝚘 🌷
 
 
-> ɴᴜᴇᴠᴀ ᴠᴇʀsɪᴏɴ ᴅɪsᴘᴏɴɪʙʟᴇ ᴘʀᴜʙᴀʟᴏ 𝑀𝐴𝐹𝐼𝐴-𝐵𝑂𝑇
+> 𝑁𝑢𝑒𝑣𝑎 𝑣𝑒𝑟𝑠𝑖𝑜𝑛 𝑑𝑒 𝑀𝑎𝑓𝑖𝑎-𝐵𝑜𝑡 
 
 > 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 3.3.0 ❤️
 
 
 ### **`🜸 Créditos el Mejor ❤️`**
 <a href="https://github.com/miaoficial02" style="display:inline-block; text-decoration: none;">
-    <img src="https://github.com/Elpapiema.png" width="130" height="130" alt="Alex-X" style="border-radius: 50%;"/>
+    <img src="https://github.com/miaoficial02.png" width="130" height="130" alt="Alex-X" style="border-radius: 50%;"/>
 </a>
