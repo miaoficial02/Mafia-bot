@@ -1,8 +1,8 @@
-﻿<h1 align="center">🥷🏻 𝘔𝘈𝘍𝘐𝘈-𝘉𝘖𝘛 🥷🏻</h1>  
+﻿<h1 align="center">🥷🏻 𝐌𝐀𝐅𝐈𝐀-𝐁𝐎𝐓🥷🏻</h1>  
 <p align="center"><i>𝑺𝑼𝑷𝑬𝑹 𝑩𝑶𝑻 𝑺𝑰𝑴𝑷𝑳𝑬 𝑷𝑨𝑹𝑨 𝑻𝑰 🩷</i></p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/ns3ood.jpg" width="700"/>
+  <img src="https://files.catbox.moe/e6t5x9.jpg" width="700"/>
 </p>
 
 
