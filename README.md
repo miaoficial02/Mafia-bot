@@ -13,8 +13,8 @@
 ```bash
 > pkg update && pkg upgrade
 > pkg install git nodejs ffmpeg imagemagick -y
-> git clone https://github.com/DanxiZx/AlyaKoujouBot
-> cd AlyaKoujouBot 
+> git clone https://github.com/miaoficial02/Mafia-bot
+> cd Mafia-bot 
 > npm install
 > node index.js
 ```
