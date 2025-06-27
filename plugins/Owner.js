@@ -8,7 +8,7 @@ const handler = async (m, { conn }) => {
   const info = `
 ╭━━〔 👑 *OWNER* 👑 〕━━⬣
 ┃ ✨ *Nombre:* ${ownerName}
-┃ 📱 *Número:* wa.me/${ownerNumber}
+┃ 📱 *Edad:* 18
 ┃ 💻 *GitHub:* ${github}
 ╰━━━━━━━━━━━━━━━━━━━━⬣
 `.trim();
