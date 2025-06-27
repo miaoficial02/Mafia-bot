@@ -107,24 +107,14 @@ export async function before(m, { conn, groupMetadata }) {
   // Mensaje de bienvenida personalizado
   if (m.messageStubType == 27) { // Evento de entrada al grupo
     let textWel = `
-┏━━━━━❖━━━✦━━━❖━━━━━┓
-┃  💗 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐎/𝐀 ✨
-┗━━━━━❖━━━✦━━━❖━━━━━┛
-
-💗 Hola ${usuario}~
-🌷 Bienvenido/a a *『${subject}』*
-
-🫶 Aquí solo hay:
-– 𝐏𝐚𝐳 𝐄𝐧𝐭𝐫𝐞 𝐀𝐦𝐢𝐠𝐨𝐬   
-– 𝐂𝐚𝐨𝐬 𝐄𝐧𝐭𝐫𝐞 𝐀𝐦𝐢𝐠𝐨𝐬 
-– 𝐋𝐚 𝐌𝐞𝐣𝐨𝐫 𝐁𝐨𝐭 𝐐𝐮𝐞 𝐇𝐚𝐲
-
-💬 𝐄𝐬𝐜𝐫𝐢𝐛𝐞  *#menu* 𝐏𝐚𝐫𝐚 𝐕𝐞𝐫 𝐋𝐚 𝐋𝐢𝐬𝐭𝐚 𝐃𝐞 𝐂𝐨𝐦𝐚𝐧𝐝𝐨𝐬 
-
-📌 𝐋𝐞𝐞 𝐥𝐚 𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧 𝐎𝐢𝐬𝐭𝐞 𝐉𝐞𝐣𝐞 
-> ${descs}
-
-❤️ 𝐃𝐢𝐬𝐟𝐫𝐮𝐭𝐚 𝐃𝐞𝐥 𝐆𝐫𝐮𝐩𝐨 𝐄𝐬𝐩𝐞𝐫𝐨 𝐪𝐮𝐞 𝐭𝐞 𝐠𝐮𝐬𝐭𝐞 
+┏━━━━━━━━━━━━━┓
+┃ 🌻𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐔𝐒𝐔𝐀𝐑𝐈𝐎🌻 
+┗━━━━━━━━━━━━━┛
+${𝐮𝐬𝐮𝐚𝐫𝐢𝐨} 
+★𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐠𝐫𝐮𝐩𝐨
+★𝐋𝐞𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐫𝐢𝐩𝐜𝐢𝐨́𝐧
+★𝐄𝐯𝐢𝐭𝐚 𝐬𝐞𝐫 𝐞𝐥𝐢𝐦𝐢𝐧𝐚𝐝𝐨. 
+> #help para ver mis comandos
 `;
 
     await conn.sendMessage(m.chat, {
@@ -137,14 +127,11 @@ export async function before(m, { conn, groupMetadata }) {
   // Mensaje de despedida personalizado
   else if (m.messageStubType == 32 ) { // Evento de salida del grupo
     let textBye = `
-┏━━━━━❖━━━✦━━━❖━━━━━┓
-┃🕊️ 𝐒𝐄 𝐅𝐔𝐄 𝐔𝐍 𝐌𝐈𝐄𝐌𝐁𝐑𝐎 🕊️
-┗━━━━━❖━━━✦━━━❖━━━━━┛
-
-𝐀𝐝𝐢𝐨𝐬 𝐁𝐫𝐨𝐭 ${usuario}...
-
-🕊️ 𝐂𝐮𝐢𝐝𝐚𝐭𝐞 😇 
-✨ 𝐄𝐥 𝐠𝐫𝐮𝐩𝐨 𝐞𝐬𝐭𝐚𝐫𝐚 𝐦𝐞𝐣𝐨𝐫 𝐬𝐢𝐧 𝐭𝐢 𝐜𝐫𝐞𝐨 𝐱𝐝 
+┏━━━━━━━━━━━━━┓
+┃ 🌻𝐆𝐎𝐎𝐃𝐁𝐘𝐄 𝐔𝐒𝐔𝐀𝐑𝐈𝐎🌻 
+┗━━━━━━━━━━━━━┛
+𝐀𝐝𝐢𝐨́𝐬 𝐝𝐞𝐥 𝐆𝐫𝐮𝐩𝐨!!! ${usuario}...
+★ 𝐕𝐮𝐞𝐥𝐯𝐞 𝐩𝐫𝐨𝐧𝐭𝐨 𝐚𝐥 𝐠𝐫𝐮𝐩𝐨!!! 
 `;
 
     await conn.sendMessage(m.chat, {
