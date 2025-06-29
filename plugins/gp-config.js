@@ -1,22 +1,13 @@
-const handler = async (m, { conn, command }) => {
-  if (!m.isGroup) return;
-  if (!m.isBotAdmin) return;
-  if (!m.isAdmin) return;
+let handler = async (m, { conn, args, isAdmin, isBotAdmin, text }) => {
+  if (!m.isGroup) throw '⚠️ Este comando solo se puede usar en grupos.'
+  if (!isAdmin) throw '🚫 Solo los administradores pueden usar este comando.'
+  if (!isBotAdmin) throw '🤖 El bot necesita ser administrador.'
 
-  if (command === 'open') {
-    await conn.groupSettingUpdate(m.chat, 'not_announcement');
-    await conn.react(m.chat, m.key, '✅');
-  }
+  let action = m.command === 'open' ? 'not_announcement' : 'announcement'
 
-  if (command === 'close') {
-    await conn.groupSettingUpdate(m.chat, 'announcement');
-    await conn.react(m.chat, m.key, '✅');
-  }
-};
+  await conn.groupSettingUpdate(m.chat, action)
+  m.react('✅')
+}
+handler.command = /^open|close$/i
 
-handler.help = ['open', 'close'];
-handler.tags = ['group'];
-handler.command = /^open|close$/i;
-handler.group = true;
-handler.admin = true;
-handler.botAdmin = true;
+export default handler
