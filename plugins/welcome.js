@@ -86,77 +86,30 @@ ${descs}
 }*/
 
 
-import { WAMessageStubType } from '@whiskeysockets/baileys'; // Asegúrate de importar correctamente
-import fetch from 'node-fetch'; // Para obtener imágenes de perfil
+import { WAMessageStubType } from '@whiskeysockets/baileys'
+import fetch from 'node-fetch'
 
-export async function before(m, { conn, groupMetadata }) {
-  // Verificar si el mensaje es un evento de grupo y si es de tipo bienvenida (27) o despedida (28, 32)
-  if (!m.messageStubType || !m.isGroup) return;
-
-  // Obtener la foto de perfil del usuario
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/a5hq0g.jpg');
-  let img = await (await fetch(pp)).buffer();
-
-  // Obtener el nombre del usuario
-  let usuario = `@${m.messageStubParameters[0].split('@')[0]}`;
-
-  // Obtener metadatos del grupo
-  let subject = groupMetadata.subject; // Nombre del grupo
-  let descs = groupMetadata.desc || "*Descripción predeterminada del grupo*"; // Descripción del grupo
-
-  // Mensaje de bienvenida personalizado
-  if (m.messageStubType == 27) { // Evento de entrada al grupo
-    let textWel = `
-┏━━━━━━━━━━━━━┓
-┃ 🌻𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐔𝐒𝐔𝐀𝐑𝐈𝐎🌻 
-┗━━━━━━━━━━━━━┛
-${𝐮𝐬𝐮𝐚𝐫𝐢𝐨} 
-★𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨 𝐚𝐥 𝐠𝐫𝐮𝐩𝐨
-★𝐋𝐞𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐫𝐢𝐩𝐜𝐢𝐨́𝐧
-★𝐄𝐯𝐢𝐭𝐚 𝐬𝐞𝐫 𝐞𝐥𝐢𝐦𝐢𝐧𝐚𝐝𝐨.
-> ✎ 𝐮𝐬𝐚 #help 𝐩𝐚𝐫𝐚 𝐯𝐞𝐫 𝐦𝐢 𝐥𝐢𝐬𝐭𝐚 𝐝𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬.
-`;
-
-    await conn.sendMessage(m.chat, {
-      image: img, // Envía la foto de perfil del usuario
-      caption: textWel,
-      mentions: [m.sender, m.messageStubParameters[0]] // Menciona al usuario
-    });
+export async function before(m, { conn, participants, groupMetadata }) {
+  if (!m.messageStubType || !m.isGroup) return !0;
+  const fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net"}  
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
+  let img = await (await fetch(`${pp}`)).buffer()
+  let chat = global.db.data.chats[m.chat]
+  let txt = 'ゲ◜៹ NEW MEMBER ៹◞ゲ'
+  let txt1 = 'ゲ◜៹ BYE MEMBER ៹◞ゲ'
+  let groupSize = participants.length
+  if (m.messageStubType == 27) {
+    groupSize++;
+  } else if (m.messageStubType == 28 || m.messageStubType == 32) {
+    groupSize--;
   }
 
-  // Mensaje de despedida personalizado
-  else if (m.messageStubType == 32 ) { // Evento de salida del grupo
-    let textBye = `
-┏━━━━━━━━━━━━━┓
-┃ 🌻𝐆𝐎𝐎𝐃𝐁𝐘𝐄 𝐔𝐒𝐔𝐀𝐑𝐈𝐎🌻 
-┗━━━━━━━━━━━━━┛
-${usuario
-𝐀𝐝𝐢𝐨́𝐬 𝐝𝐞𝐥 𝐆𝐫𝐮𝐩𝐨!!! 
-★ 𝐕𝐮𝐞𝐥𝐯𝐞 𝐩𝐫𝐨𝐧𝐭𝐨 𝐚𝐥 𝐠𝐫𝐮𝐩𝐨!!!
-> ✎ 𝐔𝐬𝐚 #help 𝐩𝐚𝐫𝐚 𝐯𝐞𝐫 𝐦𝐢 𝐥𝐢𝐬𝐭𝐚 𝐝𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬.
-`;
-
-    await conn.sendMessage(m.chat, {
-      image: img, // Envía la foto de perfil del usuario
-      caption: textBye,
-      mentions: [m.sender, m.messageStubParameters[0]] // Menciona al usuario
-    });
+  if (chat.welcome && m.messageStubType == 27) {
+    let bienvenida = `★ *Bienvenido* a ${groupMetadata.subject}\n★ @${m.messageStubParameters[0].split`@`[0]}\n${global.welcom1}\n★ Ahora somos ${groupSize} Miembros.\n✦ Disfruta tu estadía en el grupo!\n> _*𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘣𝘺:@𝘪𝘵𝘴.𝘮𝘭𝘢.𝘰𝘧𝘪𝘤𝘪𝘢𝘭.*_`    
+    await conn.sendMini(m.chat, txt, dev, bienvenida, img, img, redes, fkontak)
   }
-  else if (m.messageStubType == 28 ) { // Evento de expulsión del grupo
-    let textBan = `
-┏━━━━━━━━━━━━━┓
-┃ 🌻𝐆𝐎𝐎𝐃𝐁𝐘𝐄 𝐔𝐒𝐔𝐀𝐑𝐈𝐎🌻 
-┗━━━━━━━━━━━━━┛
-${usuario
-𝐔𝐬𝐮𝐚𝐫𝐢𝐨 𝐞𝐱𝐩𝐮𝐥𝐬𝐚𝐝𝐨... 
-★ 𝐄𝐥𝐢𝐦𝐢𝐧𝐚𝐝𝐨 𝐩𝐨𝐫 𝐧𝐨 𝐜𝐮𝐦𝐩𝐥𝐢́𝐫.!!!
-> ✎ 𝐔𝐬𝐚 #help 𝐩𝐚𝐫𝐚 𝐯𝐞𝐫 𝐦𝐢 𝐥𝐢𝐬𝐭𝐚 𝐝𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬.
-`;
-    await conn.sendMessage(m.chat, {
-      image: img, // Envía la foto de perfil del usuario
-      caption: textBan,
-      mentions: [m.sender, m.messageStubParameters[0]] // Menciona al usuario
-    });
-
-  }
-}
+  
+  if (chat.welcome && (m.messageStubType == 28 || m.messageStubType == 32)) {
+    let bye = `★ *Adiós* de ${groupMetadata.subject}\n★ @${m.messageStubParameters[0].split`@`[0]}\n${global.welcom2}\n★ Ahora somos ${groupSize} Miembros.\n✦ Te esperamos pronto!\n> _*𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘣𝘺:@𝘪𝘵𝘴.𝘮𝘭𝘢.𝘰𝘧𝘪𝘤𝘪𝘢𝘭.*_`
+    await conn.sendMini(m.chat, txt1, dev, bye, img, img, redes, fkontak)
+  }}
